@@ -1,6 +1,7 @@
 import { useState, useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../context/AuthContext";
+import "../styles/Login.css"; // Import the CSS file
 
 const Login = () => {
     const [username, setUsername] = useState("");
@@ -19,24 +20,24 @@ const Login = () => {
     };
 
     return (
-        <div className="flex items-center justify-center min-h-screen bg-gray-100">
-            <form onSubmit={handleLogin} className="p-6 bg-white shadow-md rounded-md">
-                <h2 className="text-lg font-bold mb-4">Login</h2>
+        <div className="login-container">
+            <form onSubmit={handleLogin} className="login-form">
+                <h2 className="login-title">Login</h2>
                 <input
                     type="text"
                     placeholder="Username"
                     value={username}
                     onChange={(e) => setUsername(e.target.value)}
-                    className="border p-2 mb-2 w-full"
+                    className="login-input"
                 />
                 <input
                     type="password"
                     placeholder="Password"
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
-                    className="border p-2 mb-2 w-full"
+                    className="login-input"
                 />
-                <button type="submit" className="bg-blue-500 text-white px-4 py-2 rounded">Login</button>
+                <button type="submit" className="login-button">Login</button>
             </form>
         </div>
     );

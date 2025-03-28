@@ -1,0 +1,77 @@
+/* animations.css */
+@keyframes slideInLeft {
+    from {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideOutLeft {
+    from {
+        transform: translateX(0);
+        opacity: 1;
+    }
+    to {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes scaleIn {
+    from {
+        transform: scale(0.9);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* Sidebar Animations */
+.sidebar-enter {
+    animation: slideInLeft 0.3s ease-out;
+}
+
+.sidebar-exit {
+    animation: slideOutLeft 0.3s ease-in;
+}
+
+/* Content Animations */
+.content-fade-in {
+    animation: fadeIn 0.5s ease-in;
+}
+
+.content-scale-in {
+    animation: scaleIn 0.4s ease-out;
+}
+
+/* Hover Effects */
+.hover-grow {
+    transition: transform 0.2s ease;
+}
+
+.hover-grow:hover {
+    transform: scale(1.05);
+}
+
+.hover-shadow {
+    transition: box-shadow 0.3s ease;
+}
+
+.hover-shadow:hover {
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}

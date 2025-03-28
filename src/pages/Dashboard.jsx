@@ -1,22 +1,31 @@
 import { useContext } from "react";
 import { AuthContext } from "../context/AuthContext";
-import { useNavigate } from "react-router-dom";
-
+import DashboardLayout from "../layouts/DashboardLayout";
+import "../styles/Dashboard.css";
 
 const Dashboard = () => {
-    const { user, logout } = useContext(AuthContext);
-    const navigate = useNavigate();
-
-    const handleLogout = () => {
-        logout();
-        navigate("/login");
-    };
+    const { user, profile } = useContext(AuthContext);
 
     return (
-        <div className="p-6">
-            <h1 className="text-2xl font-bold">Welcome, {user}!</h1>
-            <button onClick={handleLogout} className="mt-4 bg-red-500 text-white px-4 py-2 rounded">Logout</button>
-        </div>
+        <DashboardLayout>
+            <div className="dashboard-container">
+                {/* Title with animation */}
+                <h1 className="dashboard-title">🚀 Welcome, {user}!</h1>
+
+                {/* Subtitle with animation */}
+                <p className="dashboard-subtitle">Start exploring your learning journey 📚</p>
+
+                {/* Profile Card Animation */}
+                {profile && (
+                    <div className="profile-info">
+                        <h2>👤 Your Profile</h2>
+                        <p><strong>Name:</strong> {profile.fullName}</p>
+                        <p><strong>Email:</strong> {profile.email}</p>
+                        <p><strong>Bio:</strong> {profile.bio || "No bio available"}</p>
+                    </div>
+                )}
+            </div>
+        </DashboardLayout>
     );
 };
 

@@ -1,0 +1,108 @@
+/* Sidebar Styles */
+.sidebar {
+    width: 250px;
+    height: 100vh;
+    background-color: #1f2937;
+    color: white;
+    padding: 1rem;
+    position: fixed;
+    top: 0;
+    left: -250px; /* Initially hidden */
+    display: flex;
+    flex-direction: column;
+    transition: left 0.3s ease-in-out;
+}
+
+/* Sidebar Active (Visible) */
+.sidebar.active {
+    left: 0;
+}
+
+/* Sidebar Header (Proper Spacing) */
+.sidebar-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;  /* Space between close button & title */
+    width: 100%;
+    padding: 15px;
+    
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.sidebar-title {
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin-left: auto; /* Pushes title to the right */
+}
+
+/* Sidebar Close Button */
+.sidebar-close {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: color 0.3s ease-in-out;
+}
+
+.sidebar-close:hover {
+    color: #ddd;
+}
+
+/* Sidebar Navigation */
+.sidebar-nav {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.sidebar-link {
+    text-decoration: none;
+    color: white;
+    font-size: 1.2rem;
+    padding: 10px 20px;
+    transition: background 0.3s ease;
+    text-align: center;
+    border-radius: 5px;
+}
+
+.sidebar-link:hover,
+.sidebar-link.active {
+    background-color: #374151;
+}
+
+/* Sidebar Toggle Button */
+.sidebar-toggle {
+    position: fixed;
+    top: 15px;
+    left: 15px;
+    background-color: #1f2937;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background 0.3s ease-in-out;
+    z-index: 1001;
+}
+
+.sidebar-toggle:hover {
+    background-color: #374151;
+}
+
+/* Responsive Sidebar */
+@media (max-width: 768px) {
+    .sidebar {
+        width: 200px;
+    }
+
+    .sidebar-title {
+        font-size: 1.5rem;
+    }
+
+    .sidebar-link {
+        font-size: 1rem;
+        padding: 8px 15px;
+    }
+}
